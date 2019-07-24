@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/inputTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your password:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inputView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        app:layout_constraintStart_toEndOf="@id/inputTitle"
+        app:layout_constraintTop_toTopOf="@id/inputTitle" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/inputBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="inputTitle,inputView" />
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputBarrier" />
+
+    <Button
+        android:id="@+id/loadEncryptPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginBtn"
+        android:text="Load encrypted password"/>
+
+    <Button
+        android:id="@+id/decryptPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show decrypt password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loadEncryptPassword"/>
+
+    <TextView
+        android:id="@+id/outputTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Output:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/decryptPassword"/>
+
+    <TextView
+        android:id="@+id/outputView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/outputTitle"
+        app:layout_constraintStart_toEndOf="@id/outputTitle"/>
+</android.support.constraint.ConstraintLayout>
